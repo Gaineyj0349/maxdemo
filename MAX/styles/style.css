@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+
+    margin: 10pt;
+    width: auto;
+    height: auto;
+    background-color: darkslategray
+}
+
+h1{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align :center;
+    background-color: darkslategray;
+    color: whitesmoke;
+    font-family:helvetica;
+    font-size  :20pt;
+
+}
+
+#right_pane{
+    padding: 3pt auto;
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+#right_pane_top_inner{
+    padding-bottom: 4pt;
+    padding: 3pt auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    float: left;
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+#right_pane_bottom_inner{
+    margin-top: 15pt;
+    padding-bottom: 4pt;
+    padding: 3pt auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    float: left;
+    background-color: powderblue;
+    width: 100%;
+    height: auto;
+}
+
+#left_pane{
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    float: left;
+    background-color: white;
+    width: 69%;
+    height: 100%;
+}
+
+
+.div_titles{
+    width: 100%;
+    text-align :center;
+    background-color: darkslategray;
+    color: whitesmoke;
+    font-family:helvetica;
+    font-size  :12pt;
+}
+
+h2{
+    margin: 0px;
+}
+
+h3{
+    color: slateblue;
+    font-family:helvetica;
+    font-size  :14pt;
+    text-align :center;
+}
+
+.prompt_hint{
+    padding-left: 5pt;
+    font-family:helvetica;
+    color: slateblue;
+    font-size  :16pt;
+}
+
+
+
+
+.padded{
+    margin:6pt;
+}
+
+.line{
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    width: auto;
+    height: 2px;
+    border-bottom: 1px solid slategray;
+    position: relative;
+}
+
+
+.pane_card{
+    padding: 0px auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    margin:6pt;
+}
+
+textarea{
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    width: 100%;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.associated_add_button{
+    float: right;
+    margin: 3pt;
+    font-family:helvetica;
+    background-color: lightgreen; /* Green */
+    border: 2px solid slategray; /* Green */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+}
+
+.associated_remove_button{
+    margin: 3pt;
+    float: right;
+    font-family:helvetica;
+    background-color: crimson; /* Green */
+    border: 2px solid slategray; /* Green */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+}
+
+
+.pending_create_button{
+    margin: 3pt;
+    float: right;
+    font-family:helvetica;
+    background-color:blue ;/* Green */
+    border: 2px solid slategray; /* Green */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+
+}
+.clear_button{
+    float: right;
+    margin: 3pt;
+    font-family:helvetica;
+    background-color:orange; ;/* Green */
+    border: 2px solid slategray; /* Green */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.chosen_wrapper{
+    padding-top: 3pt; 
+    padding-bottom: 3pt; 
+    width: auto;
+}
+
+.chosen_short{
+    margin-left: auto;
+    text-indent: 1px;
+    text-overflow: '';
+    height: auto;
+    width: 100pt;
+    text-indent: 5px;
+    
+}
+.chosen_long{
+    text-indent: 1px;
+    text-overflow: '';
+    height: auto;
+    width: 100%;
+    text-indent: 5px;
+
+}
+.chosen_auto{
+    margin-left: auto;
+    text-indent: 1px;
+    text-overflow: '';
+    height: auto;
+    width: 100pt;
+    text-indent: 5px;
+
+}
+.padded_chosen_wrapper{
+    float:center;
+    margin-top: 4pt;
+}
+
+
+

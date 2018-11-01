@@ -1,0 +1,109 @@
+<!--The HTML5 doctype (document type) declaration is very simple-->
+<!DOCTYPE HTML>
+<!--All page content is inside the HTML element-->
+<html>
+<!--Head element content is not visible in a browser window-->
+<head>
+<!--The UTF-8 character set supports all symbols and characters-->
+<meta charset="UTF-8">
+<title>Data Acquisition</title>
+<!--The following line links to our style sheet file-->
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<script src='jquery/jquery-2.2.4.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='javascript/script1.js'></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+</head>
+<!--Content visible in the browser's window is inside the HTML element-->
+<body>
+<script src='javascript/OSC.js'></script>
+<script src='javascript/proj_vars.js'></script>
+<script src='javascript/ax_methods.js'></script>
+    <h1>CREATE ENTITY</h1>
+    <div id="right_pane">
+        <div id="right_pane_top_inner">
+            <h2 class="div_titles">Associations</h2>
+            <div id="associated_entity_create_div" class="padded">
+                <h3>Add New Association to this Entity</h3>
+                    <select id="associated_entity_add_new_select_box" class="chosen_short">
+                    </select>
+                    <button id="associated_entity_add_new_button"
+                            class="associated_add_button">ADD</button>
+                    <textarea name="associations_name" rows="2"
+                                id="associations_name" 
+                                placeholder="Associated Entity's Name Here"></textarea>
+
+                </div>
+                <div class="line"></div>
+                <div id="associated_entity_select_div" class="padded">
+                        <h3>Add Existing Association to this Entity</h3> 
+                        <div class="chosen_wrapper">
+                            <select id="associated_add_existing_entity_select_box_type" class="chosen_short">
+                        </select>  
+                        <button id="associated_entity_add_existing_button"
+                        class="associated_add_button">ADD</button>
+                        </div>
+                        <div class="chosen_wrapper"> 
+                            <select id="associated_add_existing_entity_select_box_name" class="chosen_long">
+                                    <option value="name1">Name 1</option>
+                                    <option value="name2">Name 2</option>
+                                    <option value="name3">Name 3</option>
+                            </select>    
+                         </div>                     
+                        </div>  
+                        <div class="line"></div>
+                        <div id="currently_wired_name_select_div" class="padded">
+                                        <h3>Associations Wired to this Entity</h3>                                                        
+                                        <div class="chosen_wrapper"> 
+                                            <select id="currently_wired_name_select_box" class="chosen_auto">
+                                                    <option value="name1">Name 1</option>
+                                                    <option value="name2">Name 2</option>
+                                                    <option value="name3">Name 3</option>
+                                            </select>    
+                                            <button id="wired_associations_remove_button"
+                                            class="associated_remove_button">REMOVE</button>
+                                         </div>                     
+                                        </div>  
+        </div>
+        <div id="right_pane_bottom_inner">
+                <h2 class="div_titles">Pending Entity Creation</h2>
+        <div id="pending_entity_div" class="padded">  
+                <div class="chosen_wrapper">
+                        <select id="pending_entity_select_box_type" class="chosen_short">
+                    </select>  
+                    <button id="pending_entity_create_button"
+                            class="pending_create_button">CREATE</button>
+                    </div>
+                    <div class="chosen_wrapper"> 
+                        <select id="pending2_entity_select_box_name" class="chosen_long">
+                                <option value="name1">Name 1</option>
+                                <option value="name2">Name 2</option>
+                                <option value="name3">Name 3</option>
+                        </select>    
+                     </div>                              
+                
+                </div>  
+        </div>
+    </div>
+    
+
+            
+    <div id="left_pane">
+             <h2 class="div_titles">Entity Details</h2>
+                <div id="entity_select_div" class="padded_chosen_wrapper">
+                    <b class="prompt_hint">Choose Entity Type</b>                    
+                     <select id="entity_select_box" class="chosen_short">
+                     </select>                    
+                </div> 
+                <button id="conflict_clear" class="clear_button">RESET</button>    
+        <div id="entity_input_content"></div>
+    </div>
+<script> populateDropsWithTypes()</script>
+<script src="javascript/chosen.js"></script>
+<script src='javascript/listeners.js'></script>
+</body>
+
+</html>
