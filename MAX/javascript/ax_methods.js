@@ -18,10 +18,7 @@ function populateDropsWithTypes(){
 
 }
 
-//this function updates all select elements
-function updateAllDrops(){
 
-}
 
 
 function AsyncRequest()
@@ -50,4 +47,8 @@ function AsyncRequest()
     }
     return request
 }
-
+function removeAllChildren(obj) {
+    while (obj.firstChild) {
+        obj.removeChild(obj.firstChild);
+    }
+}
