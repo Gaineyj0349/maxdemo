@@ -22,6 +22,7 @@
 <script src='javascript/proj_vars.js'></script>
 <script src='javascript/ax_methods.js'></script>
 <script src='javascript/script1.js'></script>
+
     <h1>CREATE ENTITY</h1>
     <div id="right_pane">
         <div id="right_pane_top_inner">
@@ -57,9 +58,7 @@
                                         <h3>Associations Wired to this Entity</h3>                                                        
                                         <div class="chosen_wrapper"> 
                                             <select id="currently_wired_name_select_box" class="chosen_auto">
-                                                    <option value="name1">Name 1</option>
-                                                    <option value="name2">Name 2</option>
-                                                    <option value="name3">Name 3</option>
+
                                             </select>    
                                             <button id="wired_associations_remove_button"
                                             class="associated_remove_button">REMOVE</button>
@@ -102,6 +101,8 @@
 <script> populateDropsWithTypes()</script>
 <script src="javascript/chosen.js"></script>
 <script src='javascript/listeners.js'></script>
+<script src='javascript/currentlyWiredAssociationsManager.js'></script>
+<script src='javascript/SubmitMethods.js'></script>
 </body>
 
 </html>

@@ -59,17 +59,14 @@ h4{
     float: right;
 }
 </style>
-<form id="person_form" action ="php/insertconflict.php">
-  
+<form id="conflict_form" name="conflict_form" action ="php/insertconflict.php">
+    <input type="hidden" id="associations" name="associations"/>
 <h4>Name:</h4>
  <input type="text" name="name" maxlength="150" autocomplete="off" class="inputfull" placeholder="Name here">
 <div class="line"></div>
 <h4>War Occurance:</h4>
 <select id="conflict_entity_create_war_associated_select" class="chosen_long" name="war_occurance">
     <!--TODO fetch this list from DB-->
-    <option value="war1">war1</option>
-    <option value="war2">war2</option>
-    <option value="war3">war3</option>
  </select>
  <div class="line"></div>
  <h4>Begin Date:</h4>
@@ -84,5 +81,5 @@ h4{
 <div class="line"></div>
 <h4>Source/References:</h4> <input type="text" name="source" maxlength="300" autocomplete="off" class="inputfull" placeholder="References here">
 <div class="line"></div>
-<input type="submit" id="conflict_submit" value="SAVE" class="create_button">
+    <input type="button" id="conflict_submit"  onclick="submitConflict()" value="SAVE" class="create_button">
 </form>

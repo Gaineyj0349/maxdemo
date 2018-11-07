@@ -71,21 +71,25 @@ function fillExistingNameAssociations(type){
                     let view =  O('associated_add_existing_entity_select_box_name')
                     removeAllChildren(view)
                     console.log(this.responseText)
+                    try{
+                        let arr1 = JSON.parse(this.responseText);
+                        console.log("array1 " + arr1)
 
-                    let arr1 = JSON.parse(this.responseText);
-                    console.log("array1 " + arr1)
-
-                    for (let j = 0; j < arr1.length; j++) {
-                        let opt = document.createElement("option");
-                        opt.value = arr1[j]
-                        if (j === 0) {
-                            opt.defaultSelected = true
+                        for (let j = 0; j < arr1.length; j++) {
+                            let opt = document.createElement("option");
+                            opt.value = arr1[j]
+                            if (j === 0) {
+                                opt.defaultSelected = true
+                            }
+                            opt.innerHTML = arr1[j]; // whatever property it has
+                            console.log(arr1[j].toUpperCase())
+                            // then append it to the select element
+                            view.appendChild(opt);
                         }
-                        opt.innerHTML = arr1[j]; // whatever property it has
-                        console.log(arr1[j].toUpperCase())
-                        // then append it to the select element
-                        view.appendChild(opt);
+                    }catch(ex){
+
                     }
+
 
                     $('#associated_add_existing_entity_select_box_name').trigger('chosen:updated');
 
@@ -154,4 +158,65 @@ function fillPendingNameAssociations(type){
     }
 
     request3.send(params3)
+}
+
+function fillWarsBoxInConflictBox(){
+    params4 = 'type=' + 'war';
+
+    request4 = new AsyncRequest()
+
+    request4.open("POST", "php/fetchNameListForDrop.php", true)
+    request4.setRequestHeader("Content-type",
+        "application/x-www-form-urlencoded")
+
+
+    request4.onreadystatechange = function()
+    {
+        if (this.readyState == 4)
+        {
+            if (this.status == 200)
+            {
+                if (this.responseText != null)
+                {
+
+                    let view =  O('conflict_entity_create_war_associated_select')
+                    try {
+                        removeAllChildren(view)
+                    }catch(ex){
+
+                    }
+                    console.log(this.responseText)
+                    try{
+                        let arr1 = JSON.parse(this.responseText);
+                        console.log("array13 " + arr1)
+
+                        for (let j = 0; j < arr1.length; j++) {
+                            let opt = document.createElement("option");
+                            opt.value = arr1[j]
+                            if (j === 0) {
+                                opt.defaultSelected = true
+                            }
+                            opt.innerHTML = arr1[j]; // whatever property it has
+                            console.log(arr1[j].toUpperCase())
+                            // then append it to the select element
+                            view.appendChild(opt);
+                        }
+                    }catch(ex){
+
+                    }
+
+
+                    $('#conflict_entity_create_war_associated_select').trigger('chosen:updated');
+
+
+                }
+                else alert("Communication error: No data received")
+
+            }
+            else alert( "Communication error: " + this.statusText)
+
+        }
+    }
+
+    request4.send(params4)
 }

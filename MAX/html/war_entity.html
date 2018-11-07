@@ -59,8 +59,8 @@
         float: right;
     }
     </style>
-    <form id="person_form" action ="php/insertwar.php">
-      
+    <form id="war_form" name="war_form" action ="php/insertwar.php">
+        <input type="hidden" id="associations" name="associations"/>
     <h4>Name:</h4>
      <input type="text" name="name" maxlength="150" autocomplete="off" class="inputfull" placeholder="Name here">
     <div class="line"></div>
@@ -76,5 +76,5 @@
     <div class="line"></div>
     <h4>Source/References:</h4> <input type="text" name="source" maxlength="300" autocomplete="off" class="inputfull" placeholder="References here">
     <div class="line"></div>
-    <input type="submit" id="war_submit" value="SAVE" class="create_button">
+        <input type="button" id="war_submit"  onclick="submitWar()" value="SAVE" class="create_button">
     </form>

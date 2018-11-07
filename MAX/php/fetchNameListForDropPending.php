@@ -13,7 +13,7 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
 $type = mysql_entities_fix_string($conn, $_POST['type']);
-$arrayOut[] = "Select";
+
 
 $query  = "SELECT DISTINCT _name FROM _table_associations WHERE _type LIKE '$type' AND _associations_id = 0";
 
@@ -29,5 +29,6 @@ for ($j = 0 ; $j < $rows ; $j++)
     $arrayOut[] = htmlspecialchars($row[0]);
 }
 sort($arrayOut, SORT_STRING);
+array_unshift($arrayOut, "Select");
 
 echo json_encode($arrayOut);

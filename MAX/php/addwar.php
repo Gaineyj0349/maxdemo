@@ -5,16 +5,15 @@ require_once ('C:\Program Files (x86)\Ampps\www\MAX\php\main_functions.php');
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
-$stmt = $conn->prepare('INSERT INTO _table_person (_name, _date_birth, _date_death, _bio, _bio_image, _associations_list, sourced_references) VALUES(?,?,?,?,?,?,?)');
-$stmt->bind_param('sssssss', $name, $dob, $dod, $bio, $image, $associations, $references);
+$stmt = $conn->prepare('INSERT INTO _table_war (_name, _date_begin, _date_end, _summary, _associations_list, _parties_involved ) VALUES(?,?,?,?,?,?)');
+$stmt->bind_param('ssssss', $name, $dob, $dod, $summary, $associations, $pinvolved);
 
 $name   = mysql_entities_fix_string($conn, $_POST['name']);
-$dob    = mysql_entities_fix_string($conn, $_POST['date_birth']);
-$dod = mysql_entities_fix_string($conn, $_POST['date_death']);
-$bio     =  mysql_entities_fix_string($conn, $_POST['summary']);
-$image     = mysql_entities_fix_string($conn, $_POST['bio_image']);
+$dob    = mysql_entities_fix_string($conn, $_POST['date_begin']);
+$dod = mysql_entities_fix_string($conn, $_POST['date_end']);
+$summary     =  mysql_entities_fix_string($conn, $_POST['summary']);
+$pinvolved     = mysql_entities_fix_string($conn, $_POST['who_label']);
 $associations     = mysql_entities_fix_string($conn, $_POST['associations']);
-$references     = mysql_entities_fix_string($conn, $_POST['source']);
 $stmt->execute();
 $stmt->close();
 

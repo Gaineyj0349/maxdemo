@@ -52,3 +52,12 @@ function removeAllChildren(obj) {
         obj.removeChild(obj.firstChild);
     }
 }
+
+function doArrayPrintout(){
+    console.log("PRINTARRAY SIZE: " + window.currentWiredAssociations.length + " \n")
+    console.log("PRINTARRAY BEGIN\n")
+    for(let i = 0; i<window.currentWiredAssociations.length; i++){
+        console.log("PRINTARRAY item #" + i + ": " +window.currentWiredAssociations[i] + '\n')
+    }
+    console.log("PRINTARRAY END\n")
+}

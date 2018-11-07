@@ -59,7 +59,7 @@
         float: right;
     }
     </style>
-    <form id="person_form" method="POST" action="php/addperson.php">      
+    <form name="person_form" id="person_form" method="POST" action="php/addperson.php">
     <h4>Name:</h4>
      <input type="text" name="name" maxlength="150" autocomplete="off" class="inputfull" placeholder="Name here">
     <div class="line"></div>
@@ -75,5 +75,7 @@
     <div class="line"></div>
     <h4>Source/References:</h4> <input type="text" name="source" maxlength="300" autocomplete="off" class="inputfull" placeholder="References here">
     <div class="line"></div>
-    <input type="submit" id="person_submit" value="SAVE" class="create_button">
+        <input type="hidden" id="associations" name="associations"/>
+    <input type="button" id="person_submit"  onclick="submitPerson()" value="SAVE" class="create_button">
+
     </form>
